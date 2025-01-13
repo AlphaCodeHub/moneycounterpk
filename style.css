@@ -1,0 +1,206 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #eee;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    max-width: 400px; /* Narrower container */
+    width: 90%;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-theme .container {
+    background-color: #282828;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+#denominations {
+    margin-bottom: 20px;
+}
+
+.denomination {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    align-items: center;
+    padding: 8px 0; /* Add some vertical padding */
+    border-bottom: 1px solid #eee; /* Add separators */
+}
+
+body.dark-theme .denomination {
+  border-bottom: 1px solid #333;
+}
+
+.denomination:last-child {
+    border-bottom: none; /* Remove bottom border from last item */
+}
+
+.denomination label {
+    text-align: left;
+}
+
+.denomination input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.denomination .result {
+    text-align: right;
+    font-weight: bold;
+}
+
+#total {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body.dark-theme #total {
+    border-top: 1px solid #333;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #00fa60; /* Blue button */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#themeToggle {
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 95%;
+    }
+}
+
+
+/* ... other CSS ... */
+
+/* Toggle Switch Styles */
+.theme-toggle {
+    text-align: center; /* Center the toggle */
+    margin-top: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px; /* Rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%; /* Make it a circle */
+}
+
+input:checked + .slider {
+    background-color: #2196F3; /* Blue when checked */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Specific button colors for dark theme */
+body.dark-theme #copyButton:hover{
+    background-color: #b15364; /* Darker Purple for Copy */
+    
+}
+
+body.dark-theme #themeToggle:hover{
+    background-color: #b15364; /* Darker Purple for Copy */
+    
+}
+
+body.dark-theme #clearButton:hover{
+    background-color: #b15364; /* Darker Purple for Copy */
+    
+}
+
+body.dark-theme #copyButton{
+    background-color: #cf6679; /* Darker Purple for Copy */
+    
+}
+
+
+body.dark-theme #clearButton {
+    background-color: #cf6679; /* Reddish-Pink for Clear */
+}
+
+
+body.dark-theme #themeToggle {
+    background-color: #cf6679; /* Reddish-Pink for Clear */
+}
